@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{fouriernc}
+%\usepackage[utf8]{vietnam}
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs}
+\usepackage{tikz,tkz-tab}
+\usepackage[top=1.75cm, bottom=1.75cm, left=1.5cm, right=1.5cm] {geometry}
+\usepackage{fancyhdr}
+\usepackage[many]{tcolorbox}
+\usepackage[dethi]{ex_test}
+\newcommand{\name}[2]{
+	%\newpage
+	\setcounter{ex}{0}
+	\begin{tcolorbox}[boxrule=1.5pt,arc=1mm,breakable,colframe=violet,colback=yellow!5]
+		\begin{minipage}[t]{0.37\textwidth}
+			\begin{center}
+				\textcolor{violet}{\bf\fontfamily{qag}\selectfont#1}
+			\end{center}
+		\end{minipage}
+		\begin{minipage}[t]{0.63\textwidth}
+			\begin{center}
+				\textcolor{violet}{\bfseries\fontfamily{qag}\selectfont #2}
+			\end{center}
+		\end{minipage}
+	\end{tcolorbox}
+}
+\def\bbox{\begin{tcolorbox}[
+		enhanced jigsaw,breakable,pad at break*=1mm,
+		colback=gray!2, colframe=black,
+		before skip=0mm,after skip=2mm,
+		boxrule=1pt,drop fuzzy shadow=white!50!gray,
+		left=1mm,right=1mm,top=1mm,bottom=0mm,
+		sharp corners,
+		rounded corners=northeast,
+		arc is angular,arc=2mm,
+		]
+	}
+	\def\ebox{\end{tcolorbox}}
+\renewtheorem{ex}{\color{blue} Câu}
+%\AtBeginEnvironment{ex}{%
+%	\bbox
+%	}
+%\AtEndEnvironment{ex}{\ebox
+%}
+\AfterEndEnvironment{ex}{
+		%\hspace{.45\textwidth}\textbf{Bài làm}\\ 
+		\ifthenelse{\theex>38}{
+		\foreach \i in {1,...,5}
+		{\noindent\tikz\draw[gray,dash pattern=on 4pt off 1pt,ultra thin](0,0)--(.49\textwidth,0)(.51\textwidth,0)--(\textwidth,0)
+		%(.5\textwidth,.45)--(.5\textwidth,-.05)
+		;\\}
+		}
+		{\foreach \i in {1,...,2}
+		%{\noindent\tikz\draw[dotted](-3,0)--(\linewidth,0);\\[2mm]}
+		{\noindent\tikz\draw[gray,dash pattern=on 4pt off 1pt,ultra thin](0,0)--(.49\textwidth,0)(.51\textwidth,0)--(\textwidth,0)
+		%(.5\textwidth,.45)--(.5\textwidth,-.05)
+		;\\}
+		}
+}
+\everymath{\displaystyle}
+\def\hoac#1{\left[\begin{aligned}#1\end{aligned}\right.}
+\def\heva#1{\left\{\begin{aligned}#1\end{aligned}\right.}
+\def\vec#1{\overrightarrow{#1}}
+\begin{document}
+%\input{dechuyenngoainguhanoi}
+%\input{dethihanam}
+\input{data/sonamdinh}
+\end{document}
